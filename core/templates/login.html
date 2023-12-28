@@ -1,0 +1,34 @@
+{% extends 'base.html '%}
+{% block title %}Login{% endblock %} 
+{% block content %}
+{% load static %}
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+<style>
+  body{
+    background-color: rgb(147, 146, 146);
+  }
+</style>
+{% load crispy_forms_tags %}
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <div class="alert alert-warning" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<!--Login--> 
+<div class="container py-5 mt-4">
+  <h4 style="color:white">Login</h4>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary mt-4" type="submit">Login</button>
+  </form>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+
+{% endblock %}
+

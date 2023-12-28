@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url({% static 'assets/img/home-bg.jpg' %})">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Dj Blog</h1>
+                        <span class="subheading">Strat To Write Blog Now.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% for blog in all_blogs %}
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="{% url 'blog_detail' pk=blog.id %}">
+                            <h2 class="post-title">{{ blog.title }}</h2>
+                            <h3 class="post-subtitle">{{ blog.content | truncatechars:80 }}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{ blog.author }}</a>
+                            {{ blog.date }}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

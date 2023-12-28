@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %} 
+{% block content %}
+{% load static %}
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+<style>
+  body{
+    background-color: rgb(147, 146, 146);;
+  }
+</style>
+{% load crispy_forms_tags %}      
+    <!--Register--> 
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="container py-5 mt-4">
+    <h4 style="color:white">Register</h4>
+    <form method="POST">
+        {% csrf_token %}
+        {{ register_form|crispy }}                    
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
+
