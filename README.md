@@ -6,7 +6,7 @@ Firstly run this in terminal
 
  And then 
 
-``` cd djBlog ```
+``` cd djblog ```
 
 Create venv
 
