@@ -2,7 +2,7 @@
 
 Firstly run this in terminal
 
-``` git clone  git@github.com:nihad-rusanov/DjTodo.git ```
+``` git clone  git@github.com:nihad-rusanov/DjBlog.git ```
 
  And then 
 
