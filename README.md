@@ -1,6 +1,3 @@
-Sure! Here's the `README.md` file content for your DjBlog project:
-
-```markdown
 # DjBlog
 
 DjBlog is a Django-based blog application that allows users to create, read, update, and delete blog posts. It includes features like user authentication, post categorization, and a commenting system.
@@ -84,5 +81,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, please contact [Nihad Rusanov](mailto:nihadrusanov420@example.com).
 ```
-
-Feel free to customize this `README.md` file according to your project's specifics.
